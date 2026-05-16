@@ -1,0 +1,16 @@
+# Local data outputs
+data/*
+!data/.gitkeep
+
+# Environment files
+.env
+.env.*
+
+# Python caches
+__pycache__/
+*.pyc
+
+# Node artifacts
+node_modules/
+dist/
+build/

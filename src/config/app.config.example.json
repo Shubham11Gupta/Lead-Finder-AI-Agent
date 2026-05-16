@@ -1,0 +1,16 @@
+{
+  "project_name": "lead-finder-ai-agent",
+  "environment": "development",
+  "timezone": "Asia/Calcutta",
+  "first_touch_only": true,
+  "manual_handoff_required_after_reply": true,
+  "automation": {
+    "auto_followup_enabled": false
+  },
+  "outreach": {
+    "allowed_channels": ["email", "instagram_dm", "whatsapp"]
+  },
+  "logging": {
+    "level": "info"
+  }
+}

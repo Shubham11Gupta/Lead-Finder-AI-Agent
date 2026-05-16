@@ -8,6 +8,11 @@ This file is your build roadmap. It converts architecture into a coding sequence
 2. No automated follow-up generation or scheduling.
 3. Manual founder/team handoff after inbound replies.
 
+## V1 Priority Focus
+1. Internet-based lead discovery is the primary path (API/connectors first).
+2. File-based connectors are fallback/dev tooling, not the final acquisition path.
+3. Email sending capability is in-scope for v1 after scoring + draft + approval flow.
+
 ## Build strategy
 1. Build smallest working pipeline first.
 2. Add quality/safety checks early.
