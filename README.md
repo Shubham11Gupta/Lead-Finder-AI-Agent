@@ -17,19 +17,19 @@ I am building this myself to deeply learn:
 - LLM-based personalization,
 - safe and compliant outreach workflows.
 
-## Scope (Phase 1)
+## Scope (Current)
 
 - Define Ideal Customer Profile (ICP) and targeting criteria.
 - Integrate 1-2 data sources (APIs or compliant data inputs).
 - Normalize lead data into a common schema.
 - Score lead relevance.
 - Draft outreach emails with clear reasoning.
-- Human-in-the-loop approval queue (no fully autonomous sending).
+- Automated sending support through SMTP (email channel).
 - Store logs for learning and iteration.
 
-## Non-Goals (for now)
+## Current Constraints
 
-- Fully autonomous mass emailing.
+- No spam blasting or policy-unsafe scraping.
 - Bypassing platform policies or scraping restricted/private data.
 - Advanced multi-agent orchestration before core pipeline works.
 
@@ -41,29 +41,46 @@ I am building this myself to deeply learn:
 - Transparent reasoning for why a lead was selected.
 - Continuous improvement from feedback.
 
-## High-Level Workflow
+## High-Level Workflow (Automated)
 
 1. Input business context + ICP.
 2. Collect candidate leads from approved sources.
 3. Normalize and enrich lead records.
 4. Score relevance.
 5. Generate personalized outreach draft.
-6. Human review (approve/edit/reject).
-7. Send + track outcomes.
-8. Learn from outcomes and improve scoring/prompting.
+6. Enrich public contact data (email discovery from public pages).
+7. Generate outreach drafts.
+8. Auto-send eligible email drafts (if enabled).
+9. Save run outputs to `runs/<run_id>/`.
 
-## Planned Project Structure
+## Run It
+
+1. Copy config:
+```powershell
+Copy-Item src\config\app.config.example.json src\config\app.config.json
+```
+2. Fill `src/config/app.config.json` with:
+- `sources.serper_api_key`
+- SMTP fields in `send` section
+3. Dry run (no sending):
+```powershell
+python run_agent.py --config src/config/app.config.json
+```
+4. Enable sending:
+- set `"send.enabled": true`
+- run the same command again
+
+## Project Structure
 
 ```text
 lead-finder-ai-agent/
   README.md
+  run_agent.py
   docs/
   src/
     connectors/
-    scoring/
-    personalization/
     orchestrator/
-    review/
     sender/
-    storage/
+    reply/
+    scoring/
   tests/

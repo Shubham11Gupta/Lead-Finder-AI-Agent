@@ -1,0 +1,7 @@
+# Paste raw evidence here.
+# Example:
+# - Google snippet: "Brand X launched sugar-free protein bites in April 2026"
+# - Instagram bio excerpt
+# - Website about/contact excerpt
+# - Ad activity notes
+

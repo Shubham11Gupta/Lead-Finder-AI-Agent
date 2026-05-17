@@ -1,0 +1,11 @@
+{
+  "openai_api_key": "YOUR_OPENAI_API_KEY",
+  "model": "gpt-5-mini",
+  "prompts_dir": "docs/prompts",
+  "output_dir": "semipilot/runs",
+  "sender_name": "Founder Name",
+  "sender_company": "Trio&Buy",
+  "raw_evidence_path": "semipilot/input/raw_evidence.txt",
+  "replies_path": "semipilot/input/replies.json",
+  "run_reply_classification": false
+}

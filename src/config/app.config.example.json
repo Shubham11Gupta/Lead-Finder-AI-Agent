@@ -2,15 +2,42 @@
   "project_name": "lead-finder-ai-agent",
   "environment": "development",
   "timezone": "Asia/Calcutta",
-  "first_touch_only": true,
-  "manual_handoff_required_after_reply": true,
-  "automation": {
-    "auto_followup_enabled": false
+  "default_region": "India",
+  "run_output_dir": "runs",
+  "sources": {
+    "serper_enabled": true,
+    "serper_api_key": "YOUR_SERPER_API_KEY",
+    "serper_queries": [
+      {
+        "query": "new d2c beauty brand india instagram",
+        "category": "beauty",
+        "region": "India"
+      },
+      {
+        "query": "new d2c snacks startup india",
+        "category": "snacks",
+        "region": "India"
+      }
+    ],
+    "serper_gl": "in",
+    "serper_hl": "en",
+    "serper_num": 10,
+    "instagram_input_path": ""
   },
   "outreach": {
-    "allowed_channels": ["email", "instagram_dm", "whatsapp"]
+    "sender_name": "Founder Name",
+    "sender_company": "Trio&Buy"
   },
-  "logging": {
-    "level": "info"
+  "send": {
+    "enabled": false,
+    "smtp_host": "smtp.gmail.com",
+    "smtp_port": 587,
+    "smtp_username": "your_email@example.com",
+    "smtp_password": "app_password_here",
+    "from_email": "your_email@example.com",
+    "from_name": "Trio&Buy Team",
+    "use_starttls": true,
+    "use_ssl": false,
+    "default_subject": "Quick idea for your brand"
   }
 }
