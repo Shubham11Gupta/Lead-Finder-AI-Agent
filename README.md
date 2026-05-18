@@ -24,7 +24,14 @@ I am building this myself to deeply learn:
 - Normalize lead data into a common schema.
 - Score lead relevance.
 - Draft outreach emails with clear reasoning.
-- Automated sending support through SMTP (email channel).
+- Serper-based internet discovery.
+- Automated review gate before dispatch.
+- Dispatch modes:
+  - Gmail draft creation (recommended)
+  - SMTP send
+  - queue-only mode
+- Reply intake + classification + suppression updates.
+- Daily metrics snapshot generation.
 - Store logs for learning and iteration.
 
 ## Current Constraints
@@ -50,8 +57,11 @@ I am building this myself to deeply learn:
 5. Generate personalized outreach draft.
 6. Enrich public contact data (email discovery from public pages).
 7. Generate outreach drafts.
-8. Auto-send eligible email drafts (if enabled).
-9. Save run outputs to `runs/<run_id>/`.
+8. Review gate approves/rejects drafts.
+9. Dispatch approved drafts (Gmail drafts, SMTP, or queue-only).
+10. Process inbound replies and update suppression.
+11. Generate daily metrics snapshot.
+12. Save run outputs to `runs/<run_id>/`.
 
 ## Run It
 
@@ -67,7 +77,10 @@ Copy-Item src\config\app.config.example.json src\config\app.config.json
 python run_agent.py --config src/config/app.config.json
 ```
 4. Enable sending:
-- set `"send.enabled": true`
+- choose dispatch mode:
+  - `"delivery.mode": "gmail_draft"` (recommended manual review in Gmail)
+  - `"delivery.mode": "smtp_send"`
+  - `"delivery.mode": "none"`
 - run the same command again
 
 ## Project Structure

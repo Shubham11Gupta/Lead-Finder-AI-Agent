@@ -18,6 +18,11 @@ class TestReplyClassifier(unittest.TestCase):
         self.assertEqual("positive", result["reply_type"])
         self.assertEqual("handoff_required", result["action_taken"])
 
+    def test_interest_plus_opt_out_becomes_neutral(self) -> None:
+        result = classify_reply("lead_3", "Interested, but please stop messaging for now.")
+        self.assertEqual("neutral", result["reply_type"])
+        self.assertFalse(result["do_not_contact"])
+
 
 if __name__ == "__main__":
     unittest.main()

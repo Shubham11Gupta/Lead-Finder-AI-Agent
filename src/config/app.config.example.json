@@ -4,6 +4,9 @@
   "timezone": "Asia/Calcutta",
   "default_region": "India",
   "run_output_dir": "runs",
+  "outreach_history_file": "data/outreach_messages_log.json",
+  "suppression_file": "data/suppression_list.json",
+  "reply_intake_file": "data/reply_intake.json",
   "sources": {
     "serper_enabled": true,
     "serper_api_key": "YOUR_SERPER_API_KEY",
@@ -28,6 +31,17 @@
     "sender_name": "Founder Name",
     "sender_company": "Trio&Buy"
   },
+  "delivery": {
+    "mode": "gmail_draft"
+  },
+  "gmail_drafts": {
+    "enabled": true,
+    "user_id": "me",
+    "oauth_client_id": "YOUR_GOOGLE_OAUTH_CLIENT_ID",
+    "oauth_client_secret": "YOUR_GOOGLE_OAUTH_CLIENT_SECRET",
+    "oauth_refresh_token": "YOUR_GOOGLE_OAUTH_REFRESH_TOKEN",
+    "oauth_access_token": ""
+  },
   "send": {
     "enabled": false,
     "smtp_host": "smtp.gmail.com",
@@ -39,5 +53,6 @@
     "use_starttls": true,
     "use_ssl": false,
     "default_subject": "Quick idea for your brand"
-  }
+  },
+  "inbound_replies": []
 }
