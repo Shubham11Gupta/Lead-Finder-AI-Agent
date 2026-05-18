@@ -14,7 +14,7 @@ I am building this myself to deeply learn:
 - AI agent design,
 - data collection and normalization,
 - lead scoring logic,
-- LLM-based personalization,
+- personalized outreach generation,
 - safe and compliant outreach workflows.
 
 ## Scope (Current)

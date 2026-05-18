@@ -15,4 +15,5 @@ node_modules/
 dist/
 build/
 
-semipilot/config.json
+src/config/app.config.json
+runs/
