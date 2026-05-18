@@ -1,2 +1,0 @@
-# Optional only when search.provider=manual_file.
-# Paste raw evidence here if you do not want automated web search.
